@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+@plugin "tailwindcss-animate";
+/* @import "tw-animate-css"; */
+
+@custom-variant dark (&:is(.dark *));
+@config "../../tailwind.config.mjs";
+
+/* **********************************************
+// Apply fonts
+// **********************************************/
+.font-heading {
+  font-family: var(--font-poppins);
+}
+
+.font-body {
+  font-family: var(--font-roboto);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,a {
+  font-family: var(--font-poppins);
+}
+
+h2{
+   color: theme('colors.primary.900') 
+}
+
+p,
+span,
+li {
+  font-family: var(--font-roboto);
+}
+
+/* **********************************************
+// Swipper
+// **********************************************/
+.swiper-button-next,
+.swiper-button-prev {
+  color: theme('colors.primary.200') !important; /* غيري اللون اللي انتي عايزاه */
+}
+
+/* **********************************************
+// Scrollbar
+// **********************************************/
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* **********************************************
+// Spinner
+// **********************************************/
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme('colors.primary.900');
+    border-right-color: theme('colors.primary.200');
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme('colors.primary.50');
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
