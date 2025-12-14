@@ -10,7 +10,7 @@ function Input({
   ...props
 }) {
   return (
-    <div className={`flex flex-col my-3 w-full ${className}`}>
+    <div className={`flex flex-col my-2 w-full ${className}`}>
       {label && (
         <label htmlFor={name} className="mb-1 font-medium text-primary-900">
           {label}

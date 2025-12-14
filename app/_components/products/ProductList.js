@@ -27,11 +27,11 @@ export default function ProductList({ products }) {
   const indexOfFirst = indexOfLast - itemsPerPage;
   const currentItems = sortedProducts.slice(indexOfFirst, indexOfLast);
 
-  // total pages 
+  // total pages
   const totalPages = Math.ceil(sortedProducts.length / itemsPerPage);
   return (
     <>
-      <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {currentItems.map((product) => (
           <ProductCard
             key={product.id}
@@ -42,7 +42,7 @@ export default function ProductList({ products }) {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center my-8">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

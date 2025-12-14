@@ -7,6 +7,7 @@ import { useDrawer } from '../contexts/DrawerContext';
 import { calculateTotalPrice } from '../utils/calculateTotalPrice';
 import ButtonLink from '../_components/ui/links/ButtonLink';
 import dynamic from 'next/dynamic';
+import BackBtn from '../_components/ui/buttons/BackBtn';
 
 const CheckoutForm = dynamic(() => import('../_components/forms/CheckoutForm'), { ssr: false });
 
@@ -31,13 +32,13 @@ function Checkout({ user }) {
    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-8 bg-gray-50 min-h-screen">
       {/* SHIPPING INFO */}
       <div className="shipping-info bg-white shadow-lg rounded-xl p-6 border border-gray-200">
-        <zz className="text-2xl font-bold mb-4">Shipping Information</zz>
+        <h2 className="text-xl flex  gap-3 items-center sm:text-3xl font-bold text-gray-800 mb-2"><BackBtn />Shipping Information</h2>
 
         <CheckoutForm user={user} />
       </div>
 
       {/* ORDER SUMMARY */}
-      <div className="order-summary bg-white shadow-lg rounded-xl p-4 sm:p-6 border border-gray-200 h-max sm:sticky sm:top-30">
+      <div className="order-summary bg-white shadow-lg rounded-xl p-4 sm:p-6 border border-primary-50 h-max sm:sticky sm:top-30">
         <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
 
         {/* ITEMS LIST */}
@@ -45,7 +46,7 @@ function Checkout({ user }) {
           {cartItems.map((item) => (
             <div
               key={item.productId}
-              className="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b pb-4"
+              className="flex  items-center gap-3 sm:gap-4 border-primary-200 border-b pb-4"
             >
               <Image
                 src={item.image}
@@ -64,8 +65,10 @@ function Checkout({ user }) {
                     {item.name}
                   </Link>
                 </p>
-                <p className="text-gray-500">Qty: {item.quantity}</p>
+                <div className='flex gap-5'>
+                  <p className="text-gray-500">Qty: {item.quantity}</p>
                 <p className="text-gray-700 font-medium">${item.price.toFixed(2)}</p>
+                </div>
 
                 <Button
                   onClick={() =>
@@ -75,7 +78,7 @@ function Checkout({ user }) {
                       setItems: setCartItems,
                     })
                   }
-                  className="mt-2 text-red-600 hover:text-red-800 text-sm"
+                  className=" text-red-600 hover:text-red-800 text-sm"
                 >
                   Remove
                 </Button>
@@ -96,7 +99,7 @@ function Checkout({ user }) {
             <span className="font-semibold">${shipping.toFixed(2)}</span>
           </div>
 
-          <div className="flex justify-between border-t pt-3 text-xl font-bold">
+          <div className="flex justify-between border-t border-primary-200 py-3 text-xl font-bold">
             <span>Total:</span>
             <span className="text-primary-600">${(subTotal + shipping).toFixed(2)}</span>
           </div>

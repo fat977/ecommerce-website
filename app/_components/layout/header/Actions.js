@@ -24,7 +24,6 @@ function Actions({ userFirstName }) {
   return (
     <ul className="flex gap-5 items-center mt-2 text-primary-900">
       <li>
-        {' '}
         <SearchBar />
       </li>
       {icons.map((icon) => (

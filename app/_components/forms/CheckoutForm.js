@@ -11,9 +11,9 @@ function CheckoutForm({ user }) {
     setSelectedOption(event.target.value);
   };
   return (
-    <form className="space-y-2 sm:space-y-3 my-3">
+    <form className="my-3">
       {/* First & Last Name */}
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+      <div className="flex flex-col sm:flex-row sm:gap-3">
         <Input
           placeholder="First name"
           defaultValue={user.user_metadata.fname}
@@ -33,7 +33,7 @@ function CheckoutForm({ user }) {
       </div>
 
       {/* Email & Country */}
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+      <div className="flex flex-col sm:flex-row  sm:gap-3">
         <Input
           type="email"
           className="flex-1"
@@ -53,7 +53,7 @@ function CheckoutForm({ user }) {
       </div>
 
       {/* Governate / City / Postal code */}
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+      <div className="flex flex-col sm:flex-row sm:gap-3">
         <Input
           type="text"
           placeholder="Governate"
@@ -81,8 +81,8 @@ function CheckoutForm({ user }) {
       />
 
       {/* Payment Section */}
-      <h1 className="text-2xl font-bold mt-4">Payment</h1>
-      <p className="mb-3">All transactions are secure and encrypted.</p>
+      <h1 className="text-2xl font-bold my-3">Payment</h1>
+      <p className="my-3">All transactions are secure and encrypted.</p>
 
       {/* Credit Card Option */}
       <label className="flex items-center sm:flex-row  sm:items-center gap-2 cursor-pointer">
@@ -109,7 +109,6 @@ function CheckoutForm({ user }) {
               height={50}
               className="w-auto h-auto"
               alt="paypal"
-             
             />
           </div>
         </div>
@@ -123,7 +122,7 @@ function CheckoutForm({ user }) {
         name="card-num"
         id="card-num"
       />
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+      <div className="flex flex-col sm:flex-row gap-0 sm:gap-2">
         <Input
           type="text"
           className="flex-1"

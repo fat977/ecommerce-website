@@ -46,7 +46,7 @@ function ProductCard({ product, sale = false }) {
           maxRating={5}
           size={18}
           color="#fcc419"
-          defaultRating={product.rating}
+          defaultRating={Number(product.rating) || 0}
         />
         <span className="text-xs sm:text-sm">({product.reviews.length})</span>
       </div>

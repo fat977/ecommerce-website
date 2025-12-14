@@ -5,7 +5,6 @@ import Input from '../ui/Input';
 import TextLink from '../ui/links/TextLink';
 
 function SigninForm({ handleLogin }) {
-
   const onSubmit = async (e) => {
     e.preventDefault();
     await handleLogin(new FormData(e.target));
@@ -14,9 +13,18 @@ function SigninForm({ handleLogin }) {
   return (
     <form
       onSubmit={onSubmit}
-      className="max-w-md mx-auto bg-primary-50 p-8 rounded-xl shadow-lg space-y-4"
+      className="
+    w-full
+    max-w-md
+    mx-auto
+    bg-primary-50
+    p-6 sm:p-8
+    rounded-xl
+    shadow-lg
+    space-y-4
+  "
     >
-      <h2 className="text-2xl font-bold text-primary-900 text-center mb-4">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900 text-center mb-4">
         Sign in to your account
       </h2>
 

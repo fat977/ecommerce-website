@@ -3,6 +3,7 @@ import { useState } from 'react';
 import SideNavigation from '@/app/categories/[category]/CategoriesSideNavigation';
 import Button from '../ui/buttons/Button';
 import dynamic from 'next/dynamic';
+import { useParams } from 'next/navigation';
 const PriceFilter = dynamic(() => import('@/app/_components/products/ProductFilter'), {
   ssr: false,
 });
@@ -10,9 +11,10 @@ const PriceFilter = dynamic(() => import('@/app/_components/products/ProductFilt
 export default function MobileFilters({ groupedCategories }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const params = useParams();
+  const category = params?.category;
   return (
     <>
-      
       <div className="flex items-center gap-4 mb-4 ">
         <PriceFilter />
         {/* categories for mobile screen*/}
@@ -24,7 +26,7 @@ export default function MobileFilters({ groupedCategories }) {
       w-100
       md:hidden"
         >
-          Categories
+          {category ? decodeURIComponent(category).replace(/^.+-/, ''): 'Categories'}
         </Button>
       </div>
 

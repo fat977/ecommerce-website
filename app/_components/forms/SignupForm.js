@@ -7,15 +7,21 @@ function SignupForm() {
   return (
     <form
       action={signUpAction}
-      className="max-w-md mx-auto bg-primary-50 p-8 rounded-xl shadow-lg space-y-4"
+      className=" w-full
+    max-w-md
+    mx-auto
+    bg-primary-50
+    p-6 sm:p-8
+    rounded-xl
+    shadow-lg
+    space-y-4"
     >
-     
-      <h2 className="text-2xl font-bold text-primary-900 text-center mb-4">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900 text-center mb-4">
         Create your account
       </h2>
 
       {/* Inputs */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="">
         <Input placeholder="First name" name="fname" id="fname" />
         <Input placeholder="Last name" name="lname" id="lname" />
       </div>
@@ -24,11 +30,7 @@ function SignupForm() {
       <Input type="password" placeholder="Your password" name="password" id="password" />
 
       {/* Submit Button */}
-      <SubmitButton
-        variant="primary"
-        size="lg"
-        className="w-full"
-      >
+      <SubmitButton variant="primary" size="lg" className="w-full">
         Create
       </SubmitButton>
 

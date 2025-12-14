@@ -18,7 +18,7 @@ export default async function CategoryLayout({ children, params }) {
         <div className="hidden md:block">
           <SideNavigation groupedCategories={groupedCategories} />
         </div>
-        <div className="py-1">{children}</div>
+        <div className="">{children}</div>
       </div>
     </>
   );

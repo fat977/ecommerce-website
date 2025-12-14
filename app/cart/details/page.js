@@ -30,7 +30,7 @@ function CartDetails() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 p-4 sm:p-6 md:p-8 bg-gray-50 ">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 p-4 sm:p-4 md:p-8 bg-gray-50 ">
           <div className="cart border-b lg:border-b-0 lg:border-r border-gray-300 pb-6 lg:pr-6">
             <h2 className="text-2xl flex  gap-3 items-center sm:text-3xl font-bold text-gray-800 mb-2">
               <BackBtn /> Shopping Cart ({cartItems.length})

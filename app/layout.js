@@ -12,6 +12,7 @@ import Cart from './cart/page';
 import { DrawerProvider } from './contexts/DrawerContext';
 import { DropdownContextProvider } from './contexts/DropdownContext';
 import Wishlist from './wishlist/page';
+import MobileNavParent from './_components/layout/mobile/MobileNavParent';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -55,9 +56,9 @@ export default async function RootLayout({ children }) {
 
           <Toaster position="top-right" toastOptions={{ duration: 4000 }} />
           <MobileTopbar />
-          <main className="mt-0 md:mt-29 flex-1">{children}</main>
+          <main className="mt-15 md:mt-29 flex-1">{children}</main>
           {/* Bottom mobile navbar */}
-          <MobileNavbar />
+          <MobileNavParent />
           <Footer />
         </DrawerProvider>
       </body>

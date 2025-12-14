@@ -36,7 +36,7 @@ export async function getProducts() {
 }
 
 export async function getFlashSaleProducts() {
-  const fieldsToSelect = 'id,title,price,discountPercentage,thumbnail,category,reviews';
+  const fieldsToSelect = 'id,title,price,rating,discountPercentage,thumbnail,category,reviews';
   try {
     const res = await fetch(
       `https://dummyjson.com/products?limit=140&select=${fieldsToSelect}`,
@@ -78,7 +78,7 @@ export async function getSimilarProducts(category, excludeId) {
 }
 
 export async function getRandomProducts() {
-  const fieldsToSelect = 'id,title,price,discountPercentage,thumbnail,category,reviews';
+  const fieldsToSelect = 'id,title,price,rating,discountPercentage,thumbnail,category,reviews';
   try {
     const res = await fetch(
       `https://dummyjson.com/products?limit=140&select=${fieldsToSelect}`,

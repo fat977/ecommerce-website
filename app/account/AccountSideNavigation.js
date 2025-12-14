@@ -8,22 +8,22 @@ const navLinks = [
   {
     name: 'My Account',
     href: '/account',
-    icon: <User className="h-5 w-5 text-primary-600" />,
+    icon: <User className="h-5 w-5 " />,
   },
   {
     name: 'Orders',
     href: '/account/orders',
-    icon: <WalletCards className="h-5 w-5 text-primary-600" />,
+    icon: <WalletCards className="h-5 w-5 " />,
   },
   {
     name: 'Wishlist',
     href: '/wishlist/details',
-    icon: <Heart className="h-5 w-5 text-primary-600" />,
+    icon: <Heart className="h-5 w-5 " />,
   },
   {
     name: 'Settings',
     href: '/',
-    icon: <Settings className="h-5 w-5 text-primary-600" />,
+    icon: <Settings className="h-5 w-5 " />,
   },
 ];
 
@@ -33,51 +33,52 @@ function AccountSideNavigation({ orientation = 'vertical' }) {
   return (
     <nav
       className={`
-        ${isVertical ? 'w-full sm:w-64 border-r' : 'w-full h-16 border-b'} 
-        border-primary-800 bg-primary-950 bg-linear-to-b from-primary-950 to-primary-900
-      `}
+    ${isVertical ? 'w-full sm:w-64 border-r' : 'w-full h-16 border-b'} 
+    border-primary-800 bg-primary-950 bg-linear-to-b from-primary-950 to-primary-900
+    
+  `}
     >
       <ul
         className={`flex ${isVertical ? 'flex-col h-full pt-6' : 'flex-row justify-around items-center h-full'} text-lg`}
       >
         {navLinks.map((link) => (
-          <li key={link.name} className={`${isVertical ? '' : 'flex-1'}`}>
+          <li key={link.name}>
             <NavLink
               href={link.href}
               variant="sidebar"
               orientation={`${isVertical ? 'vertical' : 'horizontal'}`}
             >
               <span className="text-xl opacity-90">{link.icon}</span>
-              {isVertical && <span>{link.name}</span>}
+              {isVertical && <span className="truncate">{link.name}</span>}
             </NavLink>
           </li>
         ))}
-        {/*  Horizontal */}
+
+        {/* Horizontal Logout */}
         {!isVertical && (
-          <li className="flex-1 px-4">
-            <form id="logout-form" action="/api/auth/signout" method="post">
+          <li >
+            <form
+              id="logout-form"
+              action="/api/auth/signout"
+              method="post"
+              className="w-full sm:w-auto"
+            >
               <Button
                 type="submit"
-                variant="primary" // ← ستايل مختلف للأفقي
-                size="md"
-                className=" rounded-md py-3 px-5"
+                className="w-full sm:w-auto text-primary-600 rounded-md py-2 sm:py-3 px-3 sm:px-3"
               >
-                <span className="flex items-center justify-center gap-2">
                   <LogOut size={18} />
-                </span>
               </Button>
             </form>
           </li>
         )}
 
+        {/* Vertical Logout */}
         {isVertical && (
           <>
-            {/* Divider Line */}
             <li className="mt-auto mb-4 px-6">
               <div className="h-px w-full bg-primary-700/60"></div>
             </li>
-
-            {/* Logout Button */}
             <li className="px-6 pb-6">
               <form id="logout-form" action="/api/auth/signout" method="post">
                 <Button
