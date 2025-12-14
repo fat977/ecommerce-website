@@ -20,9 +20,9 @@ import HeroSkeletonImage from '../skeleton/HeroSkeletonImage';
 export default function Carousel({ slides, options = {}, type = 'banner', renderSlide }) {
   return (
     <Swiper
-      pagination={{
-        dynamicBullets: type !== 'product',
-      }}
+      pagination={
+         type !== 'product'? {dynamicBullets:true} :false
+      }
       modules={[Pagination, Autoplay]}
       loop
       {...options}
