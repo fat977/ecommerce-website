@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import SearchResults from '@/app/search/SearchResults';
-import Button from '../../ui/buttons/Button';
 import useDebounce from '@/app/hooks/useDebounce';
+import SearchResults from '@/app/search/SearchResults';
 import { SearchIcon } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
+import Button from '../../ui/buttons/Button';
 import Input from '../../ui/Input';
-import toast from 'react-hot-toast';
 
 export default function SearchBar() {
   const [open, setOpen] = useState(false);

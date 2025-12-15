@@ -5,7 +5,7 @@ import { ChevronDown, ChevronRight, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-export default function CategoriesSideNavigation({ groupedCategories,onClose }) {
+export default function CategoriesSideNavigation({ groupedCategories, onClose }) {
   const pathname = usePathname();
 
   // initial open group based on active link
@@ -23,7 +23,7 @@ export default function CategoriesSideNavigation({ groupedCategories,onClose }) 
   };
 
   return (
-    <aside className="w-full mb-20 md:mb-8 sm:w-64 p-4 custom-scrollbar overflow-y-auto bg-primary-50 border-r border-primary-200 rounded-xl shadow-lg h-auto sm:h-[calc(100vh-64px)] sticky top-16">
+    <aside className="w-full mt-5 mb-20 md:mb-8 sm:w-64 p-4 custom-scrollbar overflow-y-auto bg-primary-50 border-r border-primary-200 rounded-xl shadow-lg h-130 sm:h-[calc(100vh-64px)] sticky top-16">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-primary-900">Categories</h2>
         {onClose && (

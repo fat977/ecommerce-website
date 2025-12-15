@@ -26,7 +26,7 @@ export default function MobileFilters({ groupedCategories }) {
       w-100
       md:hidden"
         >
-          {category ? decodeURIComponent(category).replace(/^.+-/, ''): 'Categories'}
+          {category ? decodeURIComponent(category).replace(/^.+-/, '') : 'Categories'}
         </Button>
       </div>
 
@@ -39,7 +39,7 @@ export default function MobileFilters({ groupedCategories }) {
           ></div>
 
           {/* Sidebar from bottom */}
-          <div className="fixed inset-x-0 bottom-0 bg-primary-50 border-t border-primary-200 shadow-lg p-4 rounded-t-xl transition-transform duration-300 sm:hidden z-50">
+          <div className="fixed inset-x-0 bottom-0 bg-primary-50 border-t border-primary-200 shadow-lg rounded-t-xl transition-transform duration-300 sm:hidden z-50">
             <SideNavigation
               groupedCategories={groupedCategories}
               onClose={() => setMobileOpen(false)}
